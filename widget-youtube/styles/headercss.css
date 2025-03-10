@@ -1,0 +1,97 @@
+/* Animación de entrada del banner */
+
+@keyframes fadeInBanner {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animación de hover (pequeño efecto de escala) para íconos si deseas */
+  .icon {
+      transition: transform 0.3s ease;
+
+  }
+  .icon:hover {
+      transform: scale(1.1);
+  }
+
+  body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+  }
+
+  .banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffffff;
+      padding: 10px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      padding-bottom: 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.075); /* Sombra base */
+  }
+
+  .left {
+      display: flex;
+      align-items: center;
+  }
+
+  /* Ajusta el ícono de YouTube */
+  .fa-youtube-play {
+      font-size: 48px;
+      color: red;
+      margin-right: 8px;
+  }
+
+  .title {
+      color: #020202; /* Texto en negro */
+      text-align: center;
+      margin-left: 20px;
+      border: none; /* Sin bordes */
+      padding: 8px; /* Padding fijo para evitar movimientos */
+      border-radius: 0; /* Sin redondeo inicialmente */
+      transition: background-color 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .title:hover {
+      background-color: #b7b7b746; /* Fondo gris oscuro translúcido */
+      border-radius: 3px; /* Se aplica el redondeo al hacer hover */
+      /* El padding se mantiene igual para que el texto no se mueva */
+  }
+  
+  
+
+  .buttons {
+      display: flex;
+      gap: 10px;
+      animation: fadeInBanner 0.8s ease-out forwards;
+
+  }
+
+  .publish,
+  .close {
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  .publish {
+      background-color: #2bc750;
+      color: white;
+  }
+  .publish:hover {
+      background-color: #2ca749;
+  }
+  .close {
+      background-color: #e0e0e0;
+  }
+  .close:hover {
+      background-color: #d6d6d6;
+  }

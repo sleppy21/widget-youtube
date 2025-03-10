@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Se ha actualizado la meta viewport para evitar el zoom -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Buscar Canal por URL</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Archivo de estilos -->
+  <link rel="stylesheet" href="/caso5/styles/styles.css">
+</head>
+<body>
+  <div id="contenido"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 sidebar">
+        <h1>Buscar Canal</h1>
+        <div class="group">
+          <label for="channelUrl">URL del Canal:</label>
+          <input type="text" id="channelUrl" placeholder="https://www.youtube.com/...">
+        </div>
+        <button id="searchBtn" class="mb-3">Buscar</button>
+        <div class="collapsible-header" id="detailsHeader">
+          <i>▼</i><span>Detalles de Video</span>
+        </div>
+        <div class="collapsible-content" id="detailsContent">
+          <div class="option">
+            <input type="checkbox" id="optTitle" checked>
+            <label for="optTitle">Título</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="optViews" checked>
+            <label for="optViews">Vistas</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="optLikes" checked>
+            <label for="optLikes">Likes</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="optDate" checked>
+            <label for="optDate">Fecha</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="optDescription" checked>
+            <label for="optDescription">Descripción</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="optComments" checked>
+            <label for="optComments">Comentarios</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="cards-container">
+          <div class="mt-3" id="message">Ingresa la URL del canal de YouTube para buscar.</div>
+          <div id="channelContainer"></div>
+          <div class="videos-container">
+            <div id="posts" class="row"></div>
+            <button id="prevIcon" class="pagination-icon" style="display: none;">&#9664;</button>
+            <button id="nextIcon" class="pagination-icon" style="display: none;">&#9654;</button>
+          </div>
+          <!-- Paginación numérica -->
+          <div id="numericPagination" class="numeric-pagination" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para reproducir video -->
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose"></button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Archivo de lógica JS -->
+  <script src="/caso5/scripts/script.js"></script>
+</body>
+</html>
